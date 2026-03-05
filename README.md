@@ -1,157 +1,157 @@
-# ResumeVault
+<div align="center">
 
-> 简历信息本地存储与一键复制的浏览器插件，告别重复填写校招表单。
+<img src="docs/banner.png" alt="ResumeVault" width="640" />
 
-## 解决什么问题
+**简历信息本地存储与一键复制的浏览器扩展，告别重复填写校招表单。**
 
-校招季需要在各大招聘网站反复填写个人信息，而网站自带的简历解析往往识别效果差、格式混乱，每次都要打开简历手动复制粘贴。ResumeVault 让你**一次录入，随处粘贴**——所有信息保存在浏览器本地，随时一键复制到任何网站。
+[![Chrome][chrome-badge]][chrome-link] [![Edge][edge-badge]][edge-link] [![License][license-badge]][license-link]
 
-## 功能列表
+[chrome-badge]: https://img.shields.io/badge/Chrome-Manifest_V3-4285F4?logo=googlechrome&logoColor=white
+[chrome-link]: https://chrome.google.com/webstore
+[edge-badge]: https://img.shields.io/badge/Edge-Supported-0078D7?logo=microsoftedge&logoColor=white
+[edge-link]: https://microsoftedge.microsoft.com/addons
+[license-badge]: https://img.shields.io/badge/License-MIT-green
+[license-link]: #license
 
-### 核心功能
+</div>
 
-- **简历上传参考**：支持上传 PDF / Word (.docx) 文件，本地提取文本内容作为填写参考（不联网、不调用 AI）
-- **完整信息管理**：支持录入和编辑以下信息模块：
-  - 基本信息（姓名、性别、出生日期、手机号、邮箱、政治面貌、民族、籍贯、现居城市）
-  - 教育经历（学校、专业、学历、GPA、时间、描述）
-  - 实习经历（公司、职位、时间、工作内容）
-  - 项目经历（项目名称、角色、技术栈、时间、描述）
-  - 技能
-  - 荣誉/证书
-  - 自我评价
-  - 自定义字段（可自由添加任意键值对）
-- **一键复制**：点击任意字段即可复制到剪贴板，直接粘贴到招聘网站表单
-- **搜索过滤**：在侧边栏中快速搜索定位需要的字段
+---
 
-### 快速访问
+## Why ResumeVault?
 
-- **侧边栏（Side Panel）**：在任何网页旁边常驻显示个人信息，无需切换标签页
-- **键盘快捷键**：默认 `Alt+Shift+V` 开关侧边栏（可自定义）
-- **Popup 弹窗**：点击扩展图标快速打开侧边栏或跳转编辑页
+校招季需要在各大招聘网站反复填写相同的个人信息，而网站自带的简历解析往往**识别效果差、格式混乱**，每次都要打开简历手动复制粘贴。
 
-### 数据管理
+ResumeVault 让你 **一次录入，随处粘贴** —— 所有信息保存在浏览器本地，随时一键复制到任何网站的表单中。
 
-- **本地存储**：所有数据仅存储在浏览器本地（chrome.storage.local），**绝不上传到任何服务器**
-- **导出/导入**：支持将数据导出为 JSON 文件备份，也可从 JSON 文件导入恢复
-- **清除数据**：一键清除所有已保存的信息
+## Features
 
-### 兼容性
+<table>
+<tr>
+<td width="50%">
 
-- Chrome 浏览器（Manifest V3）
-- Edge 浏览器（基于 Chromium）
+### 📋 信息管理
+- 基本信息 / 教育经历 / 实习经历
+- 项目经历 / 技能 / 荣誉证书
+- 自我评价 / 自定义字段
+- 支持上传 PDF / Word 提取文本参考
 
-## 使用指南
+</td>
+<td width="50%">
 
-### 安装方式
+### ⚡ 快速访问
+- **侧边栏常驻** — 任何网页旁边实时查看
+- **快捷键** — `Alt+Shift+V` 一键开关（可自定义）
+- **一键复制** — 点击字段即复制到剪贴板
 
-#### 方式一：从源码加载（开发者模式）
+</td>
+</tr>
+<tr>
+<td width="50%">
 
-1. 克隆本仓库并安装依赖：
+### 🔒 隐私优先
+- 数据 100% 本地存储
+- 不联网、不调用 AI、不上传任何服务器
+- 简历文件解析完全在本地完成
+
+</td>
+<td width="50%">
+
+### 💾 数据管理
+- 导出 JSON 备份
+- 从 JSON 文件恢复
+- 一键清空所有数据
+
+</td>
+</tr>
+</table>
+
+## Preview
+
+> 💡 建议在此处放置实际截图。以下为截图占位说明。
+
+| 选项页 — 完整信息编辑 | 侧边栏 — 快速查看与复制 |
+|:---:|:---:|
+| ![options](docs/preview-options.png) | ![sidepanel](docs/preview-sidepanel.png) |
+
+## Getting Started
+
+### 从源码安装（开发者模式）
 
 ```bash
-git clone <repo-url>
+# 1. 克隆仓库
+git clone https://github.com/LQF-dev/ResumeVault.git
 cd ResumeVault
+
+# 2. 安装依赖
 npm install
-```
 
-2. 构建项目：
-
-```bash
+# 3. 构建
 npm run build
 ```
 
-3. 打开 Chrome，访问 `chrome://extensions/`
-4. 开启右上角的 **开发者模式**
-5. 点击 **加载已解压的扩展程序**，选择项目中的 `dist` 目录
-6. 扩展安装完成，工具栏会出现 ResumeVault 图标
+4. 打开 Chrome，访问 `chrome://extensions/`
+5. 开启右上角 **开发者模式**
+6. 点击 **加载已解压的扩展程序**，选择 `dist` 目录
 
-#### 方式二：Chrome 商店安装
+### Chrome 商店安装
 
-> 即将上线，敬请期待。
+> 🚧 即将上线，敬请期待。
 
-### 使用流程
+## Usage
 
-#### 第一步：录入信息
+| 步骤 | 操作 |
+|:---:|------|
+| **1** | 点击工具栏图标 → 上传简历或手动填写 → 保存 |
+| **2** | 访问任意招聘网站 → 按 `Alt+Shift+V` 或点击图标打开侧边栏 |
+| **3** | 点击需要的字段 → 自动复制 → `Ctrl+V` 粘贴到表单 |
 
-1. 点击工具栏的 ResumeVault 图标
-2. 选择 **上传简历开始填写** 或 **直接手动填写**
-3. 如果上传了简历，左侧会显示提取的原文文本供参考
-4. 在右侧表单中逐项填写或修改信息，点击 **保存**
+> 自定义快捷键：访问 `chrome://extensions/shortcuts`（Edge 为 `edge://extensions/shortcuts`）
 
-#### 第二步：使用信息
+## Tech Stack
 
-1. 访问任意招聘网站
-2. 通过以下任一方式打开侧边栏：
-   - 按快捷键 `Alt+Shift+V`
-   - 点击工具栏图标 → **打开侧边栏**
-3. 在侧边栏中点击需要的字段，自动复制到剪贴板
-4. 在网站表单中 `Ctrl+V` / `Cmd+V` 粘贴
+| | 技术 | 版本 |
+|---|------|------|
+| ⚛️ | React | 19 |
+| 🔷 | TypeScript | 5 |
+| 🎨 | Tailwind CSS | 4 |
+| ⚡ | Vite | 6 |
+| 🧩 | @crxjs/vite-plugin | 2 |
+| 📄 | pdfjs-dist | 5 |
+| 📝 | mammoth | 1 |
 
-#### 自定义快捷键
-
-1. 点击 Popup 弹窗底部的 **自定义快捷键** 链接
-2. 或手动访问 `chrome://extensions/shortcuts`（Edge 为 `edge://extensions/shortcuts`）
-3. 找到 ResumeVault，设置你喜欢的快捷键组合
-
-## 技术栈
-
-| 技术 | 用途 |
-|------|------|
-| React 19 | UI 框架 |
-| TypeScript | 类型安全 |
-| Tailwind CSS 4 | 样式 |
-| Vite 6 | 构建工具 |
-| @crxjs/vite-plugin | Chrome 扩展开发支持 |
-| pdfjs-dist | PDF 文本提取 |
-| mammoth | Word (.docx) 文本提取 |
-| Chrome Extension Manifest V3 | 扩展规范 |
-
-## 项目结构
+## Project Structure
 
 ```
 src/
-├── background/          # Service Worker（快捷键、侧边栏状态管理）
-├── components/          # 共享 UI 组件
-│   ├── AutoTextArea.tsx  # 自适应高度文本域
-│   ├── CopyableField.tsx # 可复制字段
-│   ├── Icons.tsx         # 统一 SVG 图标
-│   ├── InfoCard.tsx      # 信息卡片（可折叠、可搜索）
-│   ├── ResumeUploader.tsx# 简历上传组件
-│   ├── TextReference.tsx # 原文参考展示
-│   └── Toast.tsx         # 提示消息
-├── hooks/               # React Hooks
-│   ├── useCopy.ts        # 剪贴板操作
-│   └── useStorage.ts     # chrome.storage 封装
-├── options/             # 选项页（完整信息管理界面）
-├── popup/               # 弹窗（入口页）
-├── services/            # 文件解析服务
-│   ├── docxParser.ts     # Word 解析
-│   └── pdfParser.ts      # PDF 解析
-├── sidepanel/           # 侧边栏（快速查看与复制）
-├── styles/              # 全局样式
-├── types/               # TypeScript 类型定义
-└── manifest.ts          # 扩展清单配置
+├── background/       # Service Worker (快捷键 toggle、Port 状态追踪)
+├── components/       # 共享 UI 组件 (InfoCard, Icons, Toast...)
+├── hooks/            # React Hooks (useStorage, useCopy)
+├── options/          # 选项页 — 完整信息管理界面
+├── popup/            # 弹窗 — 入口导航
+├── services/         # PDF / DOCX 本地解析
+├── sidepanel/        # 侧边栏 — 快速查看与一键复制
+├── types/            # TypeScript 类型定义
+└── manifest.ts       # Chrome Extension Manifest V3 配置
 ```
 
-## 开发
+## Development
 
 ```bash
-# 安装依赖
-npm install
-
-# 开发模式（热更新）
-npm run dev
-
-# 生产构建
-npm run build
+npm run dev     # 开发模式（HMR 热更新）
+npm run build   # 生产构建
 ```
 
-开发模式下，在 `chrome://extensions/` 加载 `dist` 目录即可实时调试。
+开发模式下在 `chrome://extensions/` 加载 `dist` 目录即可实时调试。
 
-## 隐私声明
+## Privacy
 
-ResumeVault 的所有数据均存储在浏览器本地（`chrome.storage.local`），**不会向任何外部服务器发送数据**。简历文件的文本提取完全在本地完成，不调用任何云端 API。
+ResumeVault 的所有数据均存储在浏览器本地（`chrome.storage.local`）。
+
+- ✅ 不收集任何用户数据
+- ✅ 不发送任何网络请求
+- ✅ 简历解析完全在客户端完成
+- ✅ 卸载扩展即彻底删除所有数据
 
 ## License
 
-MIT
+[MIT](./LICENSE) &copy; 2026 QinFeng Luo
